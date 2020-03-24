@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "echo \"hello\"",
     "release": "node scripts/release.js"
   },
   "devDependencies": {
