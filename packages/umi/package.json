@@ -1,0 +1,25 @@
+{
+  "name": "@umijs/assets-umi",
+  "version": "1.0.0",
+  "description": "@umijs/assets-umi",
+  "files": [
+    "blocks.json",
+    "templates.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umijs/assets"
+  },
+  "keywords": [
+    "umi",
+    "assets"
+  ],
+  "authors": [
+    "ycjcl868"
+  ],
+  "license": "MIT",
+  "bugs": "http://github.com/umijs/assets/issues",
+  "publishConfig": {
+    "access": "public"
+  }
+}

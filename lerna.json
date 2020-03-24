@@ -1,0 +1,18 @@
+{
+  "version": "independent",
+  "changelog": {
+    "labels": {
+      "enhancement": ":rocket: Enhancement",
+      "tweak": ":lipstick: Tweak",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":book: Documentation",
+      "dependency": ":deciduous_tree: Dependency",
+      "chore": ":turtle: Chore"
+    },
+    "repo": "umijs/ui",
+    "cacheDir": ".changelog"
+  },
+  "ignoreChanges": ["**/*.md", "**/*.test.ts", "**/*.e2e.ts", "**/fixtures/**", "**/test/**"],
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

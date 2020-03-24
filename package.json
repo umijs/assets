@@ -1,0 +1,11 @@
+{
+  "name": "@umijs/assets",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@umijs/utils": "^3.0.14",
+    "lerna": "^3.20.2"
+  }
+}
