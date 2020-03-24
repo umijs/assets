@@ -8,8 +8,8 @@
     "release": "node scripts/release.js"
   },
   "devDependencies": {
-    "@umijs/utils": "^3.0.14",
     "lerna": "^3.20.2",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "umi": "^3.0.14"
   }
 }

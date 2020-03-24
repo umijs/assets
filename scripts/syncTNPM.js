@@ -1,6 +1,6 @@
 const { utils } = require('umi');
 const { join } = require('path');
-const getPackage = require('./getPackage');
+const getPackage = require('./getPackages');
 
 const { execa } = utils;
 
