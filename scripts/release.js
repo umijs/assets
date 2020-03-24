@@ -7,7 +7,7 @@ const { join } = require('path');
 const { fork } = require('child_process');
 
 const lernaCli = require.resolve('lerna/cli');
-const getPackages = require('./getPackage');
+const getPackages = require('./getPackages');
 const syncTNPM = require('./syncTNPM');
 
 if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
