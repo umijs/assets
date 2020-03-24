@@ -2,15 +2,13 @@
 
 const shell = require('shelljs');
 const { existsSync } = require('fs');
-const { utils } = require('umi');
+const { signale, execa, yParser } = require('@umijs/utils');
 const { join } = require('path');
 const { fork } = require('child_process');
 
 const lernaCli = require.resolve('lerna/cli');
 const getPackages = require('./getPackage');
 const syncTNPM = require('./syncTNPM');
-
-const { signale, execa, yParser } = utils;
 
 if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
   console.error('Failed: set npm registry to https://registry.npmjs.org/ first');
