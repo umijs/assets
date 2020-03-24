@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "release": "node scripts/release.js"
+  },
   "devDependencies": {
     "@umijs/utils": "^3.0.14",
     "lerna": "^3.20.2"
