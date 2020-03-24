@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@umijs/utils": "^3.0.14",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "shelljs": "^0.8.3"
   }
 }
