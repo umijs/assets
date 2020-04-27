@@ -1,0 +1,88 @@
+{
+  "assets": {
+    "examples": [
+      {
+        "identifier": "demo-isdf81",
+        "name": "Demo",
+        "symbolId": "adfhj23",
+        "description": "Demo block of umi, with antd.",
+        "type": "BLOCK",
+        "dependencies": {
+          "index.tsx": {
+            "type": "FILE",
+            "value": "import React from 'react';\nimport { Button } from 'antd';\nimport styles from './index.less';\n\nexport default () => {\n  return <Button className={styles.container}>Hello UmiJS!</Button>;\n};\n"
+          },
+          "index.less": {
+            "type": "FILE",
+            "valoue": ".container {\n  color: blue;\n}\n"
+          },
+          "antd": {
+            "type": "NPM",
+            "value": "antd@^4"
+          },
+          "react": {
+            "type": "NPM",
+            "value": "react@^16.9"
+          }
+        }
+      },
+      {
+        "identifier": "LayoutAntdCol12",
+        "description": "两栏布局 Col 12-12",
+        "type":"BLOCK",
+        "dependencies": {
+          "index.tsx": {
+            "type": "FILE",
+            "value": "import React from 'react';\nimport { Row, Col } from 'antd';\n\nexport default () => {\n  return (\n    <Row>\n      <Col span={12} style={{ minHeight: 400, padding: 16, borderRight: '1px solid #DDD' }}>\n        INSERT_BLOCK_PLACEHOLDER:Col 12\n      </Col>\n      <Col span={12} style={{ minHeight: 400, padding: 16 }}>\n        INSERT_BLOCK_PLACEHOLDER:Col 12\n      </Col>\n    </Row>\n  );\n};\n"
+          },
+          "antd": {
+            "type": "NPM",
+            "value": "antd@^4"
+          },
+          "react": {
+            "type": "NPM",
+            "value": "react@^16.9"
+          }
+        }
+      },
+      {
+        "identifier": "LayoutHolyGrail",
+        "description": "圣杯布局，包含简单的响应式。",
+        "type":"BLOCK",
+        "dependencies": {
+          "index.tsx": {
+            "type": "FILE",
+            "value": "import React from 'react';\nimport { Row, Col } from 'antd';\n\nexport default () => {\n  return (\n    <Row>\n      <Col span={12} style={{ minHeight: 400, padding: 16, borderRight: '1px solid #DDD' }}>\n        INSERT_BLOCK_PLACEHOLDER:Col 12\n      </Col>\n      <Col span={12} style={{ minHeight: 400, padding: 16 }}>\n        INSERT_BLOCK_PLACEHOLDER:Col 12\n      </Col>\n    </Row>\n  );\n};\n"
+          },
+          "antd": {
+            "type": "NPM",
+            "value": "antd@^4"
+          },
+          "react": {
+            "type": "NPM",
+            "value": "react@^16.9"
+          }
+        }
+      },
+      {
+        "identifier": "Table",
+        "description": "查询表格是每一个项目都需要的基本页面。",
+        "type":"BLOCK",
+        "dependencies": {
+          "index.tsx": {
+            "type": "FILE",
+            "value": "import { Button, Divider, Dropdown, Form, Icon, Menu } from 'antd';\nimport React, { useState, useRef } from 'react';\nimport ProTable, { ProColumns, ActionType } from '@ant-design/pro-table';\nimport { UmiUIFlag } from 'umi';\nimport { FormComponentProps } from 'antd/es/form';\n\nexport async function queryRule(params?: TableListParams) {\n  console.log(params);\n  return { data: [], success: true };\n}\n\nconst TableList: React.FC<FormComponentProps> = () => {\n  const [sorter, setSorter] = useState({});\n  const actionRef = useRef<ActionType>();\n  const columns: ProColumns<any>[] = [\n    {\n      title: '规则名称',\n      dataIndex: 'name',\n    },\n    {\n      title: '描述',\n      dataIndex: 'desc',\n    },\n    {\n      title: '服务调用次数',\n      dataIndex: 'callNo',\n      sorter: true,\n      align: 'right',\n      renderText: (val: string) => `${val} 万`,\n    },\n    {\n      title: '状态',\n      dataIndex: 'status',\n      valueEnum: {\n        0: { text: '关闭', status: 'Default' },\n        1: { text: '运行中', status: 'Processing' },\n        2: { text: '已上线', status: 'Success' },\n        3: { text: '异常', status: 'Error' },\n      },\n    },\n    {\n      title: '上次调度时间',\n      dataIndex: 'updatedAt',\n      sorter: true,\n      valueType: 'dateTime',\n    },\n    {\n      title: '操作',\n      dataIndex: 'option',\n      valueType: 'option',\n      render: () => (\n        <>\n          <a>配置</a>\n          <Divider type=\"vertical\" />\n          <a href=\"\">订阅警报</a>\n        </>\n      ),\n    },\n  ];\n\n  return (\n    <ProTable<any>\n      headerTitle=\"查询表格\"\n      actionRef={actionRef}\n      rowKey=\"key\"\n      onChange={(_, _filter, _sorter) => {\n        setSorter(`${_sorter.field}_${_sorter.order}`);\n      }}\n      params={{\n        sorter,\n      }}\n      toolBarRender={(action, { selectedRows }) => [\n        <>\n          <UmiUIFlag />\n        </>,\n        <Button icon=\"plus\" type=\"primary\">\n          新建\n        </Button>,\n        selectedRows && selectedRows.length > 0 && (\n          <Dropdown\n            overlay={\n              <Menu\n                onClick={async e => {\n                  if (e.key === 'remove') {\n                    console.log('remove');\n                    action.reload();\n                  }\n                }}\n                selectedKeys={[]}\n              >\n                <Menu.Item key=\"remove\">批量删除</Menu.Item>\n                <Menu.Item key=\"approval\">批量审批</Menu.Item>\n              </Menu>\n            }\n          >\n            <Button>\n              批量操作 <Icon type=\"down\" />\n            </Button>\n          </Dropdown>\n        ),\n      ]}\n      tableAlertRender={(selectedRowKeys, selectedRows) => (\n        <div>\n          已选择 <a style={{ fontWeight: 600 }}>{selectedRowKeys.length}</a> 项&nbsp;&nbsp;\n          <span>\n            服务调用次数总计 {selectedRows.reduce((pre, item) => pre + item.callNo, 0)} 万\n          </span>\n        </div>\n      )}\n      request={params => queryRule(params)}\n      columns={columns}\n    />\n  );\n};\n\nexport default Form.create<FormComponentProps>()(TableList);\n"
+          },
+          "antd": {
+            "type": "NPM",
+            "value": "antd@^3"
+          },
+          "react": {
+            "type": "NPM",
+            "value": "react@^16.9"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "@umijs/assets-umi",
   "files": [
+    "index.json",
     "blocks.json",
     "templates.json"
   ],
