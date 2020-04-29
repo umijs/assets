@@ -7,6 +7,7 @@
         "symbolId": "adfhj23",
         "description": "Demo block of umi, with antd.",
         "type": "BLOCK",
+        "thumbnail": "https://user-images.githubusercontent.com/13595509/77416898-7b3e7400-6dff-11ea-8887-c539e32b1a53.png",
         "dependencies": {
           "index.tsx": {
             "type": "FILE",
@@ -30,6 +31,7 @@
         "identifier": "LayoutAntdCol12",
         "description": "两栏布局 Col 12-12",
         "type":"BLOCK",
+        "thumbnail": "https://user-images.githubusercontent.com/13595509/77416923-872a3600-6dff-11ea-94eb-5755d1acff99.png",
         "dependencies": {
           "index.tsx": {
             "type": "FILE",
@@ -49,6 +51,7 @@
         "identifier": "LayoutHolyGrail",
         "description": "圣杯布局，包含简单的响应式。",
         "type":"BLOCK",
+        "thumbnail": "https://user-images.githubusercontent.com/13595509/77416936-90b39e00-6dff-11ea-85dc-be077652b124.png",
         "dependencies": {
           "index.tsx": {
             "type": "FILE",
@@ -68,6 +71,7 @@
         "identifier": "Table",
         "description": "查询表格是每一个项目都需要的基本页面。",
         "type":"BLOCK",
+        "thumbnail": "https://user-images.githubusercontent.com/13595509/77416958-99a46f80-6dff-11ea-9b0f-08817d4ae178.png",
         "dependencies": {
           "index.tsx": {
             "type": "FILE",
