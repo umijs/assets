@@ -1,6 +1,6 @@
 {
   "name": "@umijs/assets-umi",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "@umijs/assets-umi",
   "dumiAssets": "./dist/assets.json",
   "files": [
