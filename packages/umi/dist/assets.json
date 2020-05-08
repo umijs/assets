@@ -18,7 +18,7 @@
           },
           "index.less": {
             "type": "FILE",
-            "valoue": ".container {\n  color: blue;\n}\n"
+            "value": ".container {\n  color: blue;\n}\n"
           },
           "antd": {
             "type": "NPM",
