@@ -1,4 +1,7 @@
 {
+  "name": "Umi Community",
+  "description": "来自 Umi 社区的区块",
+  "logo": "https://img.alicdn.com/tfs/TB1HMEpmuH2gK0jSZFEXXcqMpXa-64-64.png",
   "assets": {
     "examples": [
       {
