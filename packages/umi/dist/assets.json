@@ -22,11 +22,11 @@
           },
           "antd": {
             "type": "NPM",
-            "value": "antd@^4"
+            "value": "^4.0.0"
           },
           "react": {
             "type": "NPM",
-            "value": "react@^16.9"
+            "value": "^16.9.0"
           }
         }
       },
